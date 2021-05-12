@@ -1,0 +1,28 @@
+Good morning, this is Sriram Pingali. And as a part of the Cs 399 seminar course, I would like to present the paper Graph Convolutional Reinforcement Learning. Reinforcement learning is based on the idea that neural networks are capable of learning representations and policies solely based on reward functions, without the need for any supervision. An agent which has a proper idea about the environment it is in will be able to grasp the optimal course of actions using the concepts of rewards. 
+
+Amongst the various domains of rl (AI) research being advanced at the moment, one domain has become critical to the broader success of artificial intelligence, while still in its infancy. It’s called multi-agent reinforcement learning.
+
+Multi-agent reinforcement learning is the study of numerous artificial intelligence agents cohabitating in an environment, often collaborating toward some end goal. When focusing on collaboration, it derives inspiration from other social structures in the animal kingdom. It also draws heavily on game theory.
+
+Multi-agent systems are not just a research method, they can be used to model many complex problems of today’s society, such as urban and air traffic control, multi-robot coordination, distributed sensing, and energy distribution.
+
+Despite all of these useful applications, there are more critical reasons for the research community to focus on multi-agent reinforcement learning:
+the role of sociability in increasing a species intelligence
+for the safe development of artificial intelligence
+
+If we’re working toward advancing artificial intelligence, it reasonable to posit that the same sort of sociability that is so fundamental to our own intelligence will be important to advancing artificial intelligence.
+
+But what does Graph Convolutional Reinforcement Learning mean? What does it have to do with Multi-Agent Reinforcement Learning? The existing State of the art algorithm for Multi-Agent Learning is called MADDPG (Multi-Agent Deep Deterministic policy gradient) from OpenAI. It is, in principle, an Actor-Critic model. Wherein two separate neural networks, one the actor and the other the critic.
+
+An actor-network that uses local observations for deterministic actions
+A critic-network that uses joint states action pairs to estimate Q-values
+But in MADDPG, there is a joint critic network for all agents but individual action networks. This enables the Multi-agent system to learn a joint Q-Value
+
+But there are a few issues with this system, Namely,
+Communication among all agents makes it hard to extract valuable information for cooperation, while communication with only nearby agents may restrain the range of cooperation.
+
+This is a common issue in NLP tasks as well. Where in global context contains a lot of irrelevant noise while the local context is not of much use. This is something that is solved by Graph Convolutional Neural Networks, which represent words as nodes and edges between neighboring words. Applying a convolutional kernel over this graph enables the network to learn the right amount.
+
+Similarly, this paper proposes to model the multi-agent environment as a graph. Each agent is a node, the encoding of local observation of agent is the feature of the node, and there is an edge between a node and its every neighbor. We apply convolution to the graph of agents. By employing multi-head attention (Vaswani et al., 2017) as the convolution kernel, graph convolution is able to extract the relation representation between nodes and convolve the features from neighboring nodes just like a neuron in a convolutional neural network (CNN).
+
+We can see the improved performance than the state of the art models in benchmark cooperation tasks like battle, jungle, routing.
